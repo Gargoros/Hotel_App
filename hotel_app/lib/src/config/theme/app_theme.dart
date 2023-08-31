@@ -7,7 +7,7 @@ class AppTheme {
   static ThemeData lightTheme() {
     return ThemeData(
       useMaterial3: true,
-      scaffoldBackgroundColor: const Color(0xFFFFFFFF),
+      scaffoldBackgroundColor: const Color(0xFFF6F6F9),
       appBarTheme: const AppBarTheme(
         backgroundColor: Colors.transparent,
       ),
