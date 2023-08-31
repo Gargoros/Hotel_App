@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:hotel_app/src/config/theme/app_theme.dart';
 
 class HotelApp extends StatelessWidget {
-  const HotelApp({super.key});
+  HotelApp({super.key});
+
+  final theme = AppTheme.lightTheme();
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      debugShowCheckedModeBanner: false,
+      title: 'Hotel App',
+      theme: theme,
     );
   }
 }
