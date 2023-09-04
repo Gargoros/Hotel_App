@@ -46,7 +46,8 @@ class AppTextConst {
   // paid screen
   static const String orderIsPaid = "Заказ оплачен";
   static const String orderAccepted = "Ваш заказ принят в работу";
-  static const String orderAcceptedDetails =
-      "Подтверждение заказа №104893 может занять некоторое время (от 1 часа до суток). Как только мы получим ответ от туроператора, вам на почту придет уведомление.";
+  static const String orderAcceptedDetailsStart = "Подтверждение заказа №";
+  static const String orderAcceptedDetailsEnd =
+      " может занять некоторое время (от 1 часа до суток). Как только мы получим ответ от туроператора, вам на почту придет уведомление.";
   static const String paidButton = "Супер!";
 }

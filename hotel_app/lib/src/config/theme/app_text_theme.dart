@@ -68,7 +68,7 @@ class AppTextTheme {
       ),
       displaySmall: const TextStyle(
         color: Color(0xFF828796),
-        fontSize: 14,
+        fontSize: 16,
         fontFamily: 'SF-Pro-Display',
         fontWeight: FontWeight.w400,
         height: 1.20,
