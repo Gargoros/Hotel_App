@@ -41,7 +41,7 @@ class AppTextTheme {
         color: Color(0xFF828796),
         fontSize: 16,
         fontFamily: 'SF-Pro-Display',
-        fontWeight: FontWeight.w400,
+        fontWeight: FontWeight.w500,
         height: 1.20,
       ),
       bodySmall: TextStyle(
@@ -71,6 +71,21 @@ class AppTextTheme {
         fontSize: 14,
         fontFamily: 'SF-Pro-Display',
         fontWeight: FontWeight.w400,
+        height: 1.20,
+      ),
+      labelLarge: const TextStyle(
+        color: Color(0xFFFFFFFF),
+        fontSize: 16,
+        fontFamily: 'SF Pro Display',
+        fontWeight: FontWeight.w500,
+        height: 1.10,
+        letterSpacing: 0.10,
+      ),
+      labelMedium: const TextStyle(
+        color: Color(0xFF0D72FF),
+        fontSize: 14,
+        fontFamily: 'SF-Pro-Display',
+        fontWeight: FontWeight.w500,
         height: 1.20,
       ),
     );

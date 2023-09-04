@@ -13,7 +13,7 @@ class HotelApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Hotel App',
       theme: theme,
-      home: const HotelScreen(),
+      home: HotelScreen(),
     );
   }
 }
