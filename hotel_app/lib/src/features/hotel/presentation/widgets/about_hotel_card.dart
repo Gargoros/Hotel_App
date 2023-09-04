@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_app/src/core/constants/app_text_constants.dart';
+import 'package:hotel_app/src/core/widgets/app_peculiarities_widget.dart';
 import 'package:hotel_app/src/features/hotel/presentation/widgets/hotel_options.dart';
-import 'package:hotel_app/src/features/hotel/presentation/widgets/particularity_card.dart';
 
 class AboutHotelCard extends StatelessWidget {
   const AboutHotelCard({
@@ -32,17 +32,7 @@ class AboutHotelCard extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            direction: Axis.horizontal,
-            children: List.generate(
-              peculiarities.length,
-              (index) => ParticularityCard(
-                particularity: peculiarities[index],
-              ),
-            ),
-          ),
+          AppPeculiaritiesWidget(peculiarities: peculiarities),
           const SizedBox(
             height: 12,
           ),

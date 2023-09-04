@@ -88,6 +88,13 @@ class AppTextTheme {
         fontWeight: FontWeight.w500,
         height: 1.20,
       ),
+      labelSmall: const TextStyle(
+        color: Color(0xFF0D72FF),
+        fontSize: 16,
+        fontFamily: 'SF-Pro-Display',
+        fontWeight: FontWeight.w500,
+        height: 1.20,
+      ),
     );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hotel_app/src/core/widgets/hotel_custom_button.dart';
+import 'package:hotel_app/src/core/widgets/app_custom_button.dart';
 
 class CustonBottomButtonContainer extends StatelessWidget {
   final String buttonText;
@@ -27,7 +27,7 @@ class CustonBottomButtonContainer extends StatelessWidget {
               top: BorderSide(
             color: Color(0xFFe8e9ec),
           ))),
-      child: HotelCustomButton(
+      child: AppCustomButton(
         navigatTo: navigatTo,
         buttonText: buttonText,
       ),

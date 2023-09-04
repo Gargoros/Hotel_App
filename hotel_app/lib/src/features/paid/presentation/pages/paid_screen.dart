@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_app/src/core/constants/app_text_constants.dart';
-import 'package:hotel_app/src/core/widgets/custon_bottom_button_container.dart';
+import 'package:hotel_app/src/core/widgets/app_bottom_button_container.dart';
 import 'package:hotel_app/src/features/paid/presentation/widgets/order_accepted_widget.dart';
 import 'package:hotel_app/src/features/paid/presentation/widgets/order_paid_widget.dart';
 import 'package:hotel_app/src/features/paid/presentation/widgets/party_popper_image_widget.dart';

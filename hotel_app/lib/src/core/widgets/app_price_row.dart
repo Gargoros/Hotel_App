@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_app/src/core/constants/app_text_constants.dart';
 
-class HotelPriceRow extends StatelessWidget {
+class AppPriceRow extends StatelessWidget {
   final int price;
   final String priceForIt;
-  const HotelPriceRow({
+  const AppPriceRow({
     Key? key,
     required this.price,
     required this.priceForIt,
@@ -12,8 +12,7 @@ class HotelPriceRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
+    return SizedBox(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [

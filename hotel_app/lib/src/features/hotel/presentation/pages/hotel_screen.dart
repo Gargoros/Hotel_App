@@ -2,12 +2,12 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_app/src/core/constants/app_image_constants.dart';
 import 'package:hotel_app/src/core/constants/app_text_constants.dart';
-import 'package:hotel_app/src/core/widgets/custon_bottom_button_container.dart';
+import 'package:hotel_app/src/core/widgets/app_bottom_button_container.dart';
+import 'package:hotel_app/src/core/widgets/app_images_view.dart';
 import 'package:hotel_app/src/features/hotel/presentation/widgets/about_hotel_card.dart';
 import 'package:hotel_app/src/features/hotel/presentation/widgets/hotel_adress_button.dart';
-import 'package:hotel_app/src/features/hotel/presentation/widgets/hotel_images_view.dart';
 import 'package:hotel_app/src/features/hotel/presentation/widgets/hotel_name_row.dart';
-import 'package:hotel_app/src/features/hotel/presentation/widgets/hotel_price_row.dart';
+import 'package:hotel_app/src/core/widgets/app_price_row.dart';
 import 'package:hotel_app/src/features/hotel/presentation/widgets/hotel_raiting_widget.dart';
 
 class HotelScreen extends StatelessWidget {
@@ -79,7 +79,7 @@ class HotelScreen extends StatelessWidget {
                               borderRadius: BorderRadius.circular(5),
                               color: const Color(0xFFffffff),
                             ),
-                            child: Row(
+                            child: const Row(
                               children: [Text("data")],
                             ),
                           ),
@@ -93,7 +93,7 @@ class HotelScreen extends StatelessWidget {
                     hotelAdress: hotelAdress,
                     navigatTo: () {},
                   ),
-                  HotelPriceRow(
+                  AppPriceRow(
                     price: price,
                     priceForIt: priceForIt,
                   ),

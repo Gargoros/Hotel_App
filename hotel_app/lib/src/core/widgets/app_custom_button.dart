@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class HotelCustomButton extends StatelessWidget {
+class AppCustomButton extends StatelessWidget {
   final void Function() navigatTo;
-  const HotelCustomButton({
+  const AppCustomButton({
     super.key,
     required this.buttonText,
     required this.navigatTo,
@@ -14,7 +14,7 @@ class HotelCustomButton extends StatelessWidget {
     return Container(
         padding: const EdgeInsets.only(top: 15, bottom: 14),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(15),
           color: const Color(0xFF0d72ff),
         ),
         height: 50,

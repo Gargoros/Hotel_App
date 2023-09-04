@@ -17,9 +17,9 @@ class HotelApp extends StatelessWidget {
       title: 'Hotel App',
       theme: theme,
       // home: HotelScreen(),
-      // home: BookingScreen(),
+      home: BookingScreen(),
       // home: RoomScreen(),
-      home: PaidScreen(),
+      // home: PaidScreen(),
     );
   }
 }
