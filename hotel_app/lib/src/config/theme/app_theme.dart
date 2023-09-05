@@ -9,7 +9,7 @@ class AppTheme {
       useMaterial3: true,
       scaffoldBackgroundColor: const Color(0xFFF6F6F9),
       appBarTheme: const AppBarTheme(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Color(0xFFFFFFFF),
       ),
       textTheme: AppTextTheme.lightTextTheme(),
       colorScheme: ColorScheme.fromSwatch().copyWith(
