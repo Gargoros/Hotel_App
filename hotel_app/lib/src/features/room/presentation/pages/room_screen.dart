@@ -37,13 +37,8 @@ class RoomScreen extends StatelessWidget {
   }
 
   ListView _bodyBuilder() {
-    return ListView.separated(
+    return ListView.builder(
       itemCount: rooms.length,
-      separatorBuilder: (context, index) {
-        return const SizedBox(
-          height: 8,
-        );
-      },
       itemBuilder: (context, index) {
         return AboutRoomCard(
             imageUrls: imageUrls,

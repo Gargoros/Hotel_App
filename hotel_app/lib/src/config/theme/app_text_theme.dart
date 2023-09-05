@@ -95,6 +95,30 @@ class AppTextTheme {
         fontWeight: FontWeight.w500,
         height: 1.20,
       ),
+      headlineSmall: const TextStyle(
+        color: Color(0xFFA8ABB6),
+        fontSize: 12,
+        fontFamily: 'SF-Pro-Display',
+        fontWeight: FontWeight.w400,
+        height: 1.20,
+        letterSpacing: 0.12,
+      ),
+      headlineMedium: const TextStyle(
+        color: Color(0xFF14132A),
+        fontSize: 16,
+        fontFamily: 'SF-Pro-Display',
+        fontWeight: FontWeight.w400,
+        height: 1.10,
+        letterSpacing: 0.75,
+      ),
+      headlineLarge: const TextStyle(
+        color: Color(0xFFA8ABB6),
+        fontSize: 17,
+        fontFamily: 'SF-Pro-Display',
+        fontWeight: FontWeight.w400,
+        height: 1.20,
+        letterSpacing: 0.17,
+      ),
     );
   }
 }
