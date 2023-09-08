@@ -15,6 +15,7 @@ class AboutRoomCard extends StatelessWidget {
     required String buttonText,
     required this.price,
     required this.priceForIt,
+    required this.navigatTo,
   }) : _buttonText = buttonText;
 
   final List<String> imageUrls;
@@ -23,6 +24,7 @@ class AboutRoomCard extends StatelessWidget {
   final String _buttonText;
   final int price;
   final String priceForIt;
+  final void Function() navigatTo;
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +65,7 @@ class AboutRoomCard extends StatelessWidget {
           ),
           AppCustomButton(
             buttonText: AppTextConst.roomSelect,
-            navigatTo: () {},
+            navigatTo: navigatTo,
           ),
         ],
       ),
