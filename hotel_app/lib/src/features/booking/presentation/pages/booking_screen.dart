@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:hotel_app/src/config/router/app_router.gr.dart';
 import 'package:hotel_app/src/core/constants/app_text_constants.dart';
 import 'package:hotel_app/src/core/widgets/app_bottom_button_container.dart';
+import 'package:hotel_app/src/core/widgets/app_custom_app_bar.dart';
+import 'package:hotel_app/src/features/booking/presentation/widgets/add_new_tourist.dart';
 import 'package:hotel_app/src/features/booking/presentation/widgets/booking_data_card.dart';
 import 'package:hotel_app/src/features/booking/presentation/widgets/buyer_info_card.dart';
 import 'package:hotel_app/src/features/booking/presentation/widgets/registration_card.dart';
-import 'package:hotel_app/src/features/booking/presentation/widgets/registration_row.dart';
 import 'package:hotel_app/src/features/booking/presentation/widgets/small_hotel_info_card.dart';
 import 'package:hotel_app/src/features/booking/presentation/widgets/total_price_card.dart';
 
@@ -54,86 +55,72 @@ class _BookingScreenState extends State<BookingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          AppTextConst.bookingTitle,
-          style: Theme.of(context).textTheme.titleMedium,
-        ),
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 8,
-            ),
-            SmallHotelInfoCard(
-                rating: rating,
-                ratingName: ratingName,
-                hotelName: hotelName,
-                hotelAdress: hotelAdress),
-            const SizedBox(
-              height: 8,
-            ),
-            BookingDataCard(
-                departureFrom: departureFrom,
-                hotelLocation: hotelLocation,
-                date1: date1,
-                date2: date2,
-                numberOfNights: numberOfNights,
-                hotelName: hotelName,
-                roomType: roomType,
-                foodType: foodType),
-            const SizedBox(
-              height: 8,
-            ),
-            BuyerInfoCard(
-              labelText: labelText,
-              buyerPhoneNumber: buyerPhoneNumber,
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            RegistrationCard(registrationCardName: registrationCardName),
-            const SizedBox(
-              height: 8,
-            ),
-            AddNewTourist(registrationCardName: registrationCardName),
-            const SizedBox(
-              height: 8,
-            ),
-            TotalPriceCard(price: price),
-            const SizedBox(
-              height: 10,
-            ),
-            CustonBottomButtonContainer(
-              navigatTo: () => context.router.push(const PaidRoute()),
-              buttonText:
-                  "${AppTextConst.toPayButton} $buttonText ${AppTextConst.cashSign}",
-            ),
-          ],
-        ),
+      appBar: _appBarBuilder(),
+      body: _bodyBuilder(context),
+    );
+  }
+
+  SingleChildScrollView _bodyBuilder(BuildContext context) {
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          const SizedBox(
+            height: 8,
+          ),
+          SmallHotelInfoCard(
+              rating: rating,
+              ratingName: ratingName,
+              hotelName: hotelName,
+              hotelAdress: hotelAdress),
+          const SizedBox(
+            height: 8,
+          ),
+          BookingDataCard(
+              departureFrom: departureFrom,
+              hotelLocation: hotelLocation,
+              date1: date1,
+              date2: date2,
+              numberOfNights: numberOfNights,
+              hotelName: hotelName,
+              roomType: roomType,
+              foodType: foodType),
+          const SizedBox(
+            height: 8,
+          ),
+          BuyerInfoCard(
+            labelText: labelText,
+            buyerPhoneNumber: buyerPhoneNumber,
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+          RegistrationCard(registrationCardName: registrationCardName),
+          const SizedBox(
+            height: 8,
+          ),
+          AddNewTourist(registrationCardName: registrationCardName),
+          const SizedBox(
+            height: 8,
+          ),
+          TotalPriceCard(price: price),
+          const SizedBox(
+            height: 10,
+          ),
+          CustonBottomButtonContainer(
+            navigatTo: () => context.router.push(const PaidRoute()),
+            buttonText:
+                "${AppTextConst.toPayButton} $buttonText ${AppTextConst.cashSign}",
+          ),
+        ],
       ),
     );
   }
-}
 
-class AddNewTourist extends StatelessWidget {
-  const AddNewTourist({
-    super.key,
-    required this.registrationCardName,
-  });
-
-  final String registrationCardName;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: const Color(0xFFFFFFFF),
-        borderRadius: BorderRadius.circular(15),
-      ),
-      padding: const EdgeInsets.all(16),
-      child: RegistrationRow(registrationCardName: registrationCardName),
+  CustomAppBar _appBarBuilder() {
+    return const CustomAppBar(
+      appBarTitle: AppTextConst.bookingTitle,
+      preferredSize: Size.fromHeight(60.0),
+      firstSrceen: false,
     );
   }
 }

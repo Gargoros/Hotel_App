@@ -5,6 +5,7 @@ import 'package:hotel_app/src/config/router/app_router.gr.dart';
 import 'package:hotel_app/src/core/constants/app_image_constants.dart';
 import 'package:hotel_app/src/core/constants/app_text_constants.dart';
 import 'package:hotel_app/src/core/widgets/app_bottom_button_container.dart';
+import 'package:hotel_app/src/core/widgets/app_custom_app_bar.dart';
 import 'package:hotel_app/src/core/widgets/app_images_view.dart';
 import 'package:hotel_app/src/features/hotel/presentation/widgets/about_hotel_card.dart';
 import 'package:hotel_app/src/features/hotel/presentation/widgets/hotel_adress_button.dart';
@@ -54,84 +55,90 @@ class _HotelScreenState extends State<HotelScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          AppTextConst.hotelTitle,
-          style: Theme.of(context).textTheme.titleMedium,
-        ),
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              clipBehavior: Clip.antiAlias,
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(15),
-                    bottomRight: Radius.circular(15)),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Stack(
-                      children: [
-                        ScrollableImageWidget(
-                          imageUrls: imageUrls,
-                        ),
-                        Positioned(
-                          left: 130,
-                          right: 130,
-                          bottom: 8,
-                          child: Container(
-                            height: 17,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              color: const Color(0xFFffffff),
-                            ),
-                            child: const Row(
-                              children: [Text("data")],
-                            ),
+      appBar: _appBarBuilder(),
+      body: WillPopScope(
+        onWillPop: () async => false,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                clipBehavior: Clip.antiAlias,
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(15),
+                      bottomRight: Radius.circular(15)),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Stack(
+                        children: [
+                          ScrollableImageWidget(
+                            imageUrls: imageUrls,
                           ),
-                        )
-                      ],
+                          Positioned(
+                            left: 130,
+                            right: 130,
+                            bottom: 8,
+                            child: Container(
+                              height: 17,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                color: const Color(0xFFffffff),
+                              ),
+                              child: const Row(
+                                children: [Text("data")],
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
-                  ),
-                  HotelRaitingWidget(rating: rating, ratingName: ratingName),
-                  HotelNameRow(hotelName: hotelName),
-                  HotelAdressButton(
-                    hotelAdress: hotelAdress,
-                    navigatTo: () {},
-                  ),
-                  AppPriceRow(
-                    price: price,
-                    priceForIt: priceForIt,
-                  ),
-                ],
+                    HotelRaitingWidget(rating: rating, ratingName: ratingName),
+                    HotelNameRow(hotelName: hotelName),
+                    HotelAdressButton(
+                      hotelAdress: hotelAdress,
+                      navigatTo: () {},
+                    ),
+                    AppPriceRow(
+                      price: price,
+                      priceForIt: priceForIt,
+                    ),
+                  ],
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            AboutHotelCard(
-              peculiarities: peculiarities,
-              hotelDescription: hotelDescription,
-            ),
-            const SizedBox(
-              height: 12,
-            ),
-            CustonBottomButtonContainer(
-              navigatTo: () => context.router.push(const RoomRoute()),
-              buttonText: AppTextConst.goToRoomsButton,
-            ),
-          ],
+              const SizedBox(
+                height: 8,
+              ),
+              AboutHotelCard(
+                peculiarities: peculiarities,
+                hotelDescription: hotelDescription,
+              ),
+              const SizedBox(
+                height: 12,
+              ),
+              CustonBottomButtonContainer(
+                navigatTo: () => context.router.push(const RoomRoute()),
+                buttonText: AppTextConst.goToRoomsButton,
+              ),
+            ],
+          ),
         ),
       ),
+    );
+  }
+
+  CustomAppBar _appBarBuilder() {
+    return const CustomAppBar(
+      appBarTitle: AppTextConst.hotelTitle,
+      preferredSize: Size.fromHeight(60.0),
+      firstSrceen: true,
     );
   }
 }
