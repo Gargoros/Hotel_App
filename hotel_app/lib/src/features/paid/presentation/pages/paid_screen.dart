@@ -50,7 +50,7 @@ class _PaidScreenState extends State<PaidScreen> {
           const Spacer(),
           CustonBottomButtonContainer(
             buttonText: AppTextConst.paidButton,
-            navigatTo: () => context.router.replace(const HotelRoute()),
+            navigatTo: () => context.router.replace(HotelRoute()),
           )
         ],
       ),

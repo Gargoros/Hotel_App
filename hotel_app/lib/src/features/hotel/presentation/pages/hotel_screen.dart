@@ -124,7 +124,7 @@ class _HotelScreenState extends State<HotelScreen> {
                 height: 12,
               ),
               CustonBottomButtonContainer(
-                navigatTo: () => context.router.push(const RoomRoute()),
+                navigatTo: () => context.router.push(RoomRoute()),
                 buttonText: AppTextConst.goToRoomsButton,
               ),
             ],

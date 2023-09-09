@@ -64,7 +64,7 @@ class _RoomScreenState extends State<RoomScreen> {
           buttonText: _buttonText,
           price: price,
           priceForIt: priceForIt,
-          navigatTo: () => context.router.push(const BookingRoute()),
+          navigateTo: () => context.router.push(const BookingRoute()),
         );
       },
     );

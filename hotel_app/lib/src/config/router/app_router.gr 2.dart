@@ -9,7 +9,6 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i5;
-import 'package:flutter/material.dart' as _i6;
 import 'package:hotel_app/src/features/booking/presentation/pages/booking_screen.dart'
     as _i1;
 import 'package:hotel_app/src/features/hotel/presentation/pages/hotel_screen.dart'
@@ -31,11 +30,9 @@ abstract class $AppRouter extends _i5.RootStackRouter {
       );
     },
     HotelRoute.name: (routeData) {
-      final args = routeData.argsAs<HotelRouteArgs>(
-          orElse: () => const HotelRouteArgs());
       return _i5.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i2.HotelScreen(key: args.key),
+        child: const _i2.HotelScreen(),
       );
     },
     PaidRoute.name: (routeData) {
@@ -45,11 +42,9 @@ abstract class $AppRouter extends _i5.RootStackRouter {
       );
     },
     RoomRoute.name: (routeData) {
-      final args =
-          routeData.argsAs<RoomRouteArgs>(orElse: () => const RoomRouteArgs());
       return _i5.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i4.RoomScreen(key: args.key),
+        child: const _i4.RoomScreen(),
       );
     },
   };
@@ -71,31 +66,16 @@ class BookingRoute extends _i5.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i2.HotelScreen]
-class HotelRoute extends _i5.PageRouteInfo<HotelRouteArgs> {
-  HotelRoute({
-    _i6.Key? key,
-    List<_i5.PageRouteInfo>? children,
-  }) : super(
+class HotelRoute extends _i5.PageRouteInfo<void> {
+  const HotelRoute({List<_i5.PageRouteInfo>? children})
+      : super(
           HotelRoute.name,
-          args: HotelRouteArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'HotelRoute';
 
-  static const _i5.PageInfo<HotelRouteArgs> page =
-      _i5.PageInfo<HotelRouteArgs>(name);
-}
-
-class HotelRouteArgs {
-  const HotelRouteArgs({this.key});
-
-  final _i6.Key? key;
-
-  @override
-  String toString() {
-    return 'HotelRouteArgs{key: $key}';
-  }
+  static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
 }
 
 /// generated route for
@@ -114,29 +94,14 @@ class PaidRoute extends _i5.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i4.RoomScreen]
-class RoomRoute extends _i5.PageRouteInfo<RoomRouteArgs> {
-  RoomRoute({
-    _i6.Key? key,
-    List<_i5.PageRouteInfo>? children,
-  }) : super(
+class RoomRoute extends _i5.PageRouteInfo<void> {
+  const RoomRoute({List<_i5.PageRouteInfo>? children})
+      : super(
           RoomRoute.name,
-          args: RoomRouteArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'RoomRoute';
 
-  static const _i5.PageInfo<RoomRouteArgs> page =
-      _i5.PageInfo<RoomRouteArgs>(name);
-}
-
-class RoomRouteArgs {
-  const RoomRouteArgs({this.key});
-
-  final _i6.Key? key;
-
-  @override
-  String toString() {
-    return 'RoomRouteArgs{key: $key}';
-  }
+  static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
 }

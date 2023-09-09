@@ -5,9 +5,23 @@ import 'package:hotel_app/src/config/router/app_router.gr.dart';
 class AppRouter extends $AppRouter {
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(page: HotelRoute.page, initial: true),
-        AutoRoute(page: RoomRoute.page),
-        AutoRoute(page: BookingRoute.page),
-        AutoRoute(page: PaidRoute.page),
+        // add your routes here
+        CustomRoute(
+          page: HotelRoute.page,
+          initial: true,
+          transitionsBuilder: TransitionsBuilders.slideRight,
+        ),
+        CustomRoute(
+          page: BookingRoute.page,
+          transitionsBuilder: TransitionsBuilders.slideRight,
+        ),
+        CustomRoute(
+          page: PaidRoute.page,
+          transitionsBuilder: TransitionsBuilders.slideRight,
+        ),
+        CustomRoute(
+          page: RoomRoute.page,
+          transitionsBuilder: TransitionsBuilders.slideRight,
+        ),
       ];
 }
